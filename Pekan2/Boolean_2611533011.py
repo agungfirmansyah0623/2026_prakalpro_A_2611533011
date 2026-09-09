@@ -9,4 +9,4 @@ print("=== Check Kelulusan ===")
 print("Nilai:" , nilai_3011)
 print("Apakah lulus?:", status_kelulusan)
 if is_lulus and is_cumlaude:
-    print("Selamat, Anda lulus dengan predikat cumlaude!")
+    print("Selamat, Anda lulus dengan predikat Cum Laude!")
