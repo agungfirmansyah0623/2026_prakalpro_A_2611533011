@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #create a variable with integer value.
 a_3011=100
 print("The type of variable having value", a_3011, " is" , type(a_3011))
