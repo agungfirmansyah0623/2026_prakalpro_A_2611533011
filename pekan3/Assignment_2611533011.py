@@ -10,39 +10,39 @@ print("\n nilai awal angka1 =", angka1_3011)
 print("nilai angka2 =", angka2_3011)
 
 # assignment biasa 
-hasil = angka1_3011
+hasil_3011 = angka1_3011
 print("\n assingmnet biasa (=)")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # assignment penambahan
-hasil = angka1_3011
-hasil += angka2_3011
+hasil_3011 = angka1_3011
+hasil_3011 += angka2_3011
 print("\n assignment penambahan (+=)")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # assignment perkalian
-hasil = angka1_3011
-hasil *= angka2_3011
+hasil_3011 = angka1_3011
+hasil_3011 *= angka2_3011
 print("\n assignment perkalian (*=)")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # assignment pembagian, pembagian bulat, dan sisa bagi 
 if angka2_3011 != 0:
-    hasil = angka1_3011
-    hasil /= angka2_3011
+    hasil_3011 = angka1_3011
+    hasil_3011 /= angka2_3011
     print("\n assignment pembagian (/=)")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 
     #operator tambahan
-    hasil = angka1_3011
-    hasil //= angka2_3011
+    hasil_3011 = angka1_3011
+    hasil_3011 //= angka2_3011
     print("\n assignment pembagian bulat (//=)")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 
-    hasil = angka1_3011
-    hasil %= angka2_3011
+    hasil_3011 = angka1_3011
+    hasil_3011 %= angka2_3011
     print("\n assignment sisa bagi (%=)")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 
 else:
     print("\n pembagian tidak dapat dilakukan")

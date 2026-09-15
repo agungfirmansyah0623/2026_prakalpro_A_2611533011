@@ -11,26 +11,26 @@ print("\nA1 =", a1_3011)
 print("A2 =", a2_3011)
 
 # konjungsi: bernilai True jika keduanya True
-hasil = a1_3011 and a2_3011
+hasil_3011 = a1_3011 and a2_3011
 print("\n konjungsi (AND)")
-print("A1 and A2 =", hasil)
+print("A1 and A2 =", hasil_3011)
 
 # disjungsi: bernilai true jika salah satunya true
-hasil = a1_3011 or a2_3011
+hasil_3011 = a1_3011 or a2_3011
 print("\n disjungsi (OR)")
-print("A1 or A2 = ", hasil)
+print("A1 or A2 = ", hasil_3011)
 
 # negasi A1: membalik nilai A1
-hasil = not a1_3011 
+hasil_3011 = not a1_3011 
 print("\n negasi (NOT)")
-print("not A1= ", hasil)
+print("not A1= ", hasil_3011)
 
 # negasi A2: membalik nilai A2
-hasil = not a2_3011 
+hasil_3011 = not a2_3011 
 print("\n negasi (NOT)")
-print("not A2= ", hasil)
+print("not A2= ", hasil_3011)
 
 # XOR: bernilai true jika kedua nilai berbeda
-hasil = a1_3011 != a2_3011
+hasil_3011 = a1_3011 != a2_3011
 print("\n disjungsi eksklusif (XOR)")
-print("A1 XOR A2 =", hasil)
+print("A1 XOR A2 =", hasil_3011)

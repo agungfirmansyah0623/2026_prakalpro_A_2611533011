@@ -7,37 +7,37 @@ angka1_3011 = int(input("input angka-1:"))
 angka2_3011 = int(input("input angka-2:"))
 
 # PENJUMLAHAN
-hasil = angka1_3011 + angka2_3011
+hasil_3011 = angka1_3011 + angka2_3011
 print("\nOperator Penjumlahan")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # PENGURANGAN
-hasil = angka1_3011 - angka2_3011
+hasil_3011 = angka1_3011 - angka2_3011
 print("\nOperator Pengurangan")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # PERKALIAN
-hasil = angka1_3011 * angka2_3011
+hasil_3011 = angka1_3011 * angka2_3011
 print("\nOperator Perkalian")
-print("hasil =", hasil)
+print("Hasil =", hasil_3011)
 
 # PEMBAGIAN
 if angka2_3011 != 0:
-    hasil = angka1_3011 / angka2_3011
+    hasil_3011 = angka1_3011 / angka2_3011
     print("\nOperator Pembagian")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 
-    hasil = angka1_3011 // angka2_3011
+    hasil_3011 = angka1_3011 // angka2_3011
     print("\nOperator Pembagian Bulat")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 
-    hasil = angka1_3011 % angka2_3011
+    hasil_3011 = angka1_3011 % angka2_3011
     print("\nOperator Sisa Bagi")
-    print("hasil =", hasil)
+    print("Hasil =", hasil_3011)
 else:
     print("angka kedua tidak boleh bernilai 0.")
 
 # PANGKAT
-hasil = angka1_3011 ** angka2_3011
+hasil_3011 = angka1_3011 ** angka2_3011
 print("\n Operator Pangkat")
-print("hasil =", hasil)
+print("Hasil=", hasil_3011)
