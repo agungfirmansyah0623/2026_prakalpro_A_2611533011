@@ -13,6 +13,7 @@ jenis_kelamin_3011 = input("Masukkan Jenis Kelamin (L/P): ")
 umur_3011 = int(input("Masukkan Umur : "))
 skor_tes_3011 = float(input("Masukkan Skor Tes Awal : "))
 
+
 # Data String
 alamat_3011 = """Jl. Kampus Unand,
 Kecamatan Kuranji,
