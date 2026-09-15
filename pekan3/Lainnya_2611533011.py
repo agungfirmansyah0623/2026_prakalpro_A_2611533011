@@ -16,7 +16,7 @@ print("\n Operator keanggotaan IN")
 print(nilai_dicari_3011, "in", data_3011, "=", hasil_3011)
 
 # operator not in 
-hasil_3011_3011 = nilai_dicari_3011 not in data_3011 
+hasil_3011 = nilai_dicari_3011 not in data_3011 
 print("\n Operator keanggotaan NOT IN")
 print(nilai_dicari_3011, "not in", data_3011, "=", hasil_3011)
 
