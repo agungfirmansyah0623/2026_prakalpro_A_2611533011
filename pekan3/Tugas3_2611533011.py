@@ -82,4 +82,5 @@ print("\n=== Shift ===")
 print("1111 << 1")
 print("Hasil Biner   : 11110")
 print("Hasil Desimal : 30")
+
 print("\n=== SELESAI ===")
