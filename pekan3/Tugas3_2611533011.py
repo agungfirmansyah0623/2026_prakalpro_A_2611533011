@@ -24,14 +24,19 @@ print("Kode Promo                         : ", promo_3011)
 
 kode_promo_3011 = ["HIDUP IF", "HIDUP FTI", "JALAN SEHAT"]
 
+syarat_total_3011 = total_belanja_3011 >=200000
+syarat_jumlah_barang_3011 = jumlah_barang_3011 >=3
+valid_status_3011 = status_3011 == "member"
+valid_promo_3011 = promo_3011 in kode_promo_3011 
+
 
 print("\n=== HASIL VALIDASI ===")
-print(f"Belanja >= Rp200000                : {total_belanja_3011 >= 200000}") 
-print(f"Jumlah Barang >= 3                 : {jumlah_barang_3011 >= 3}")
-print(f"Status Member                      : {status_3011 == "member"}")
-print(f"Kode Promo Tersedia                : {promo_3011 in kode_promo_3011}")
-print(f"Mendapatkan Diskon                 : {promo_3011 in kode_promo_3011}")
-print(f"Mendapatkan Promo                  : {promo_3011 in kode_promo_3011}")
+print(f"Belanja >= Rp200000                : {syarat_total_3011}") 
+print(f"Jumlah Barang >= 3                 : {syarat_jumlah_barang_3011}")
+print(f"Status Member                      : {valid_status_3011}")
+print(f"Kode Promo Tersedia                : {valid_promo_3011}")
+print(f"Mendapatkan Diskon                 : {syarat_jumlah_barang_3011 or syarat_total_3011}")
+print(f"Mendapatkan Promo                  : {valid_promo_3011}")
 
 #=========================================
 #  =====HASIL PERHITUNGAN============
@@ -61,23 +66,19 @@ print("\n=== OPERASI BITWISE ===")
 
 print("\n=== Kode Status Transaksi ===")
 
-#KODE STATU
+#KODE STATUS
 #0001 = member
-#0010 = Belom di pakai
-#0100 = Belom di pakai
+#0010 = total belanja >= Rp 200000
+#0100 = jumlah barang >= 3
 #1000 = promo
 
 #menggunakan OR (|)
-kode_member_3011 = 0b0001
-kode_promo_3011 = 0b1000
-kode_status_3011 = ( kode_member_3011 | 0b0010 | 0b0100 | kode_promo_3011)
+kode_transaksi_3011 =  int(valid_status_3011) << 0| int(syarat_total_3011) << 1 | int(syarat_jumlah_barang_3011) << 2 | int(valid_promo_3011) << 3
+kode_referensi_3011 = int(valid_status_3011) << 0| int(syarat_total_3011) << 1 | int(valid_promo_3011) << 3
 
-
-
-print("0001 | 0010 | 0100 | 1000")
-print("Kode Biner   : ", format(kode_status_3011, "04b"))
-print("Kode Desimal : ", kode_status_3011)
-
+print(f"{format(int(valid_status_3011) << 0, "04b")} << 0| {format(int(syarat_total_3011) << 1, "04b")} | {format(int(syarat_jumlah_barang_3011) << 2, "04b")} | {format(int(valid_promo_3011) << 3, "04b")}")
+print(f"Kode Biner   : {format(kode_transaksi_3011, "04b")}") 
+print(f"Kode Desimal : {kode_transaksi_3011}")
 
 #====================================
 #========PEMERIKSAAN STATUS=========
@@ -90,19 +91,15 @@ print("\nCek Member")
 
 #menggunakan and (&)
 
-cek_member_3011 = kode_status_3011 & kode_member_3011
-cek_promo_3011 = kode_status_3011 & kode_promo_3011
-
-print("1111 & 0001")
-print("Hasil Biner   :", format(cek_member_3011, "04b"))
-print("Hasil Desimal :", cek_member_3011)
+print(f"{format(kode_transaksi_3011, "04b")} & {format(int(valid_status_3011) << 0, "04b")}")
+print(f"Hasil Biner   : {format((kode_transaksi_3011) & int(valid_status_3011) << 0, "04b")}")
+print(f"Hasil Desimal : {(kode_transaksi_3011) & int(valid_status_3011) << 0}") 
 
 print("\nCek Promo")
 
-print("1111 & 1000")
-print("Hasil Biner   :", format(cek_promo_3011, "04b"))
-print("Hasil Desimal :", cek_promo_3011)
-
+print(f"{format(kode_transaksi_3011, "04b")} & {format(int(valid_promo_3011) << 3, "04b")}")
+print(f"Hasil Biner   : {format((kode_transaksi_3011) & int(valid_promo_3011) << 3, "04b")}")
+print(f"Hasil Desimal  : {(kode_transaksi_3011) & int(valid_promo_3011) << 3}")
 
 #====================================
 #======PERBANDINGAN STATUS==========
@@ -110,20 +107,13 @@ print("Hasil Desimal :", cek_promo_3011)
 
 print("\n=== Perbandingan Status ===")
 
-
  # menggunakan XOR (^)
 
-
-kode_referensi_3011 = 0b1011
-hasil_XOR_3011 = kode_status_3011 ^ kode_referensi_3011
-
-print("Kode Transaksi :", format(kode_status_3011, "04b"))
-print("Kode Referensi :", format(kode_referensi_3011, "04b"))
-
-print("1111 ^ 1011")
-
-print("Hasil Biner   :", format(hasil_XOR_3011, "04b"))
-print("Hasil Desimal :", hasil_XOR_3011)
+print(f"Kode Transaksi : {format(kode_transaksi_3011, "04b")}")
+print(f"Kode Referensi : {format(kode_referensi_3011, "04b")}")
+print(f"{format(kode_transaksi_3011, "04b")} ^ {format(kode_referensi_3011, "04b")}")
+print(f"Hasil Biner    : {format((kode_transaksi_3011) ^ (kode_referensi_3011))}")
+print(f"Hasil Desimal  : {(kode_transaksi_3011) ^ (kode_referensi_3011)}")
 
 #=====================================
 #=======SHIFT GESER KIRI=============
@@ -134,10 +124,7 @@ print("\n=== Shift ===")
 
 #bitwise kiri/ shift kiri (<<)
 
-hasil_shift_3011 = kode_status_3011 << 1
-
-print("1111 << 1")
-print("Hasil Biner   :", format(hasil_shift_3011, "b"))
-print("Hasil Desimal :", hasil_shift_3011)
-
-print("\n=== SELESAI ===")
+print(f"{format(kode_transaksi_3011,"04b")} << 1")
+print(f"Hasil Biner   : {format((kode_transaksi_3011) << 1,"04b")}")
+print(f"Hasil Desimal : {(kode_transaksi_3011) << 1}") 
+print("=== SELESAI ===")
