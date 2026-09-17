@@ -73,10 +73,10 @@ print("\n=== Kode Status Transaksi ===")
 #1000 = promo
 
 #menggunakan OR (|)
-kode_transaksi_3011 =  int(valid_status_3011) << 0| int(syarat_total_3011) << 1 | int(syarat_jumlah_barang_3011) << 2 | int(valid_promo_3011) << 3
-kode_referensi_3011 = int(valid_status_3011) << 0| int(syarat_total_3011) << 1 | int(valid_promo_3011) << 3
+kode_transaksi_3011 =  int(valid_status_3011) << 0 | int(syarat_total_3011) << 1 | int(syarat_jumlah_barang_3011) << 2 | int(valid_promo_3011) << 3
+kode_referensi_3011 = int(valid_status_3011) << 0 | int(syarat_total_3011) << 1 | int(valid_promo_3011) << 3
 
-print(f"{format(int(valid_status_3011) << 0, "04b")} << 0| {format(int(syarat_total_3011) << 1, "04b")} | {format(int(syarat_jumlah_barang_3011) << 2, "04b")} | {format(int(valid_promo_3011) << 3, "04b")}")
+print(f"{format(int(valid_status_3011) << 0, "04b")} | {format(int(syarat_total_3011) << 1, "04b")} | {format(int(syarat_jumlah_barang_3011) << 2, "04b")} | {format(int(valid_promo_3011) << 3, "04b")}")
 print(f"Kode Biner   : {format(kode_transaksi_3011, "04b")}") 
 print(f"Kode Desimal : {kode_transaksi_3011}")
 
