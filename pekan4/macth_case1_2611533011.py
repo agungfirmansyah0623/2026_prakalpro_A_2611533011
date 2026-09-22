@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # program ini konversi angka menjadi nama bulan
 
 
@@ -29,4 +30,37 @@ match bulan_3011:
     case 12 :
         print("Desember")
     case _:
+=======
+# program ini konversi angka menjadi nama bulan
+
+
+bulan_3011= int(input("Masukkan angka bulan (1-12): "))
+
+match bulan_3011:
+    case 1 :
+        print("Januari")
+    case 2 :
+        print("Februari")
+    case 3 :
+       print("Maret")
+    case 4 :
+        print("April")
+    case 5 :
+        print("Mei")    
+    case 6 :
+        print("Juni")
+    case 7 :
+        print("July")
+    case 8 :
+        print("Agustus")
+    case 9 :
+        print("September")
+    case 10 :
+        print("Oktober")
+    case 11 :
+        print("November")
+    case 12 :
+        print("Desember")
+    case _:
+>>>>>>> ff20a508ae4c905be584074e0b08da96bdcc9268
         print("Angka tidak valid")
