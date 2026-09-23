@@ -1,4 +1,3 @@
-import sys
 print("=== SISTEM LOKET ALPRO ADVENTURE PARK ===")
 
 #===========================================
@@ -7,6 +6,10 @@ print("=== SISTEM LOKET ALPRO ADVENTURE PARK ===")
 
 nama_3011 =     input("Masukkan Nama Pengunjung            : ")
 umur_3011 = int(input("Input umur anda                     : "))
+if umur_3011 <= 9:
+    print("Status Akses: Anda belum cukup umur")
+    exit()
+    
 sim_3011  =     input("Apakah Anda Sudah Punya SIM C (y/t) : ").strip().lower()[0]
 
 print()
@@ -45,7 +48,7 @@ match paket_3011:
         harga_satuan_3011 = 220000
     case _:
         print("Paket wahana tidak valid!")
-        sys.exit()
+        exit()
 
 jumlah_tiket_3011 = int(input("Masukkan jumlah tiket          : "))
  
