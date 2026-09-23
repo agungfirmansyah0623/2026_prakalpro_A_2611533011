@@ -1,12 +1,13 @@
+import sys
 print("=== SISTEM LOKET ALPRO ADVENTURE PARK ===")
 
 #===========================================
 # ----------INPUT DATA PENGUNJUNG----------
 #===========================================
 
-nama_3011 = input("Masukkan Nama Pengunjung        : ")
-umur_3011 = int(input("Input umur anda                 : "))
-sim_3011 = input("Apakah Anda Sudah Punya SIM C (y/t): ").strip().lower()[0]
+nama_3011 =     input("Masukkan Nama Pengunjung            : ")
+umur_3011 = int(input("Input umur anda                     : "))
+sim_3011  =     input("Apakah Anda Sudah Punya SIM C (y/t) : ").strip().lower()[0]
 
 print()
 print("Pilihan Paket Wahana (1-5):")
@@ -16,16 +17,8 @@ print("  3. Motor ATV Ekstrim    (Rp 120,000)")
 print("  4. Roller Coaster Kilat (Rp 100,000)")
 print("  5. All-Access VIP       (Rp 220,000)")
 
-paket_3011 = int(input("Masukkan nomor paket (1-5)      : "))
-jumlah_tiket_3011 = int(input("Masukkan jumlah tiket           : "))
+paket_3011 = int(input("Masukkan nomor paket (1-5)     : "))
 
-# if tunggal: validasi kelogisan jumlah tiket
-
-if jumlah_tiket_3011 <= 0:
-    print("Peringatan: Kuota tiket tidak valid!")
-
-is_member_3011 = input("Apakah Anda member? (y/t)       : ").strip().lower()
-kode_promo_valid_3011 = input("Apakah kode promo valid? (y/t)  : ").strip().lower()
 
 #===================================================
 # ----------PEMILIHAN WAHANA (match-case)----------
@@ -52,7 +45,15 @@ match paket_3011:
         harga_satuan_3011 = 220000
     case _:
         print("Paket wahana tidak valid!")
-        exit()
+        sys.exit()
+
+jumlah_tiket_3011 = int(input("Masukkan jumlah tiket          : "))
+ 
+if jumlah_tiket_3011 <= 0:
+    print("Peringatan: Kuota tiket tidak valid!")
+
+is_member_3011 =        input("Apakah Anda member? (y/t)      : ").strip().lower()
+kode_promo_valid_3011 = input("Apakah kode promo valid? (y/t) : ").strip().lower()
 
 #================================================
 # ----------VALIDASI IZIN KENDALI WAHANA--------
@@ -61,21 +62,19 @@ match paket_3011:
 print()
 print("--- KELAYAKAN PENGENDARA WAHANA ---")
 
-if paket_3011 == 3:
-    if umur_3011 >= 17 and sim_3011 == 'y':
-        print("Status Akses: Anda sudah dewasa dan boleh mengendarai ATV sendiri.")
-    elif umur_3011 >= 17 and sim_3011 != 'y':
-        print("Status Akses: Anda sudah dewasa tetapi tidak boleh bawa motor ATV "
-              "(wajib didampingi instruktur).")
-    elif umur_3011 < 17 and sim_3011 == 'y':
-        print("Status Akses: Identitas tidak valid: Belum cukup umur memiliki SIM.")
-    else:
-        print("Status Akses: Anda belum cukup umur dan tidak boleh bawa motor ATV.")
+if paket_3011 == 3 and umur_3011 >= 17 and sim_3011 == 'y':
+    print("Status Akses: Anda sudah dewasa dan boleh mengendarai ATV sendiri.")
+elif paket_3011 == 3 and umur_3011 >= 17 and sim_3011 != 'y':
+    print("Status Akses: Anda sudah dewasa tetapi tidak boleh bawa motor ATV "
+          "(wajib didampingi instruktur).")
+elif paket_3011 == 3 and umur_3011 < 17 and sim_3011 == 'y':
+    print("Status Akses: Identitas tidak valid: Belum cukup umur memiliki SIM.")
+elif paket_3011 == 3:
+    print("Status Akses: Anda belum cukup umur dan tidak boleh bawa motor ATV.")
+elif paket_3011 != 3 and umur_3011 >= 10:
+    print(f"Status Akses: Anda memenuhi syarat umur untuk {nama_paket_3011}.")
 else:
-    if umur_3011 >= 10:
-        print(f"Status Akses: Anda memenuhi syarat umur untuk {nama_paket_3011}.")
-    else:
-        print(f"Status Akses: Anda belum memenuhi syarat umur untuk {nama_paket_3011}.")
+    print(f"Status Akses: Anda belum memenuhi syarat umur untuk {nama_paket_3011}.")
 
 #====================================================================
 # ----------AKUMULASI DISKON BERTINGKAT (Multi-IF terpisah)----------
